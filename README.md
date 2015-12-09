@@ -49,4 +49,4 @@ Deploy as usual. Make sure to set correct scale for the 'bot' process to 1:
 
 Set env vars:
 
-	$ dokku config:set INCOMING_WEBHOOK_URL="...." CAT_CHANNEL="#cats" CAT_TIMES="10:00" TZ="Europe/Moscow"
+	$ dokku config:set cat-to-slack INCOMING_WEBHOOK_URL="...." CAT_CHANNEL="#cats" CAT_TIMES="10:00" TZ="Europe/Moscow"
