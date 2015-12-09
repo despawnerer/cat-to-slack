@@ -25,8 +25,8 @@ Cat to Slack is configured through environment variables:
   Comma-separated list of times at which the cat gifs will be posted (ex `10:00,18:00`). These times are in the timezone of the process.
 
 
-Setup and running
------------------
+Setting up and running
+----------------------
 
 ### Manual
 
