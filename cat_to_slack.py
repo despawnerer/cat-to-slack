@@ -90,11 +90,11 @@ def post_new_cat():
 
 # the schedule
 
-TIMES = os.environ.get('CAT_TIMES', '10:00').split(',')
+CAT_TIMES = os.environ.get('CAT_TIMES', '10:00').split(',')
 
-for a_time in TIMES:
-    logging.info("Adding daily schedule at %s" % a_time)
-    schedule.every().day.at(a_time).do(post_new_cat)
+for cat_time in CAT_TIMES:
+    logging.info("Adding daily schedule at %s" % cat_time)
+    schedule.every().day.at(cat_time).do(post_new_cat)
 
 while 1:
     schedule.run_pending()
