@@ -1,12 +1,12 @@
-import schedule
-import requests
-import time
 import collections
 import json
 import logging
-import sys
 import os
 import random
+import requests
+import schedule
+import sys
+import time
 
 
 logging.basicConfig(
