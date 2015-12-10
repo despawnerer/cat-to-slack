@@ -6,6 +6,7 @@ import json
 import logging
 import sys
 import os
+import random
 
 
 logging.basicConfig(
@@ -47,10 +48,14 @@ def get_new_cat():
 # posting cats
 
 INCOMING_WEBHOOK_URL = os.environ.get('INCOMING_WEBHOOK_URL')
+CAT_EMOJIS = [
+    ':smiley_cat:', ':smile_cat:', ':joy_cat:', ':heart_eyes_cat:',
+    ':smirk_cat:', ':kissing_cat:', ':scream_cat:', ':crying_cat_face:',
+    ':pouting_cat:', ':cat:', ':cat2:',
+]
 PAYLOAD_PARAMS = {
     "channel": os.environ.get('CAT_CHANNEL'),
     "username": "Cat",
-    "icon_emoji": ":cat:",
     "unfurl_media": True,
     "unfurl_links": True,
 }
@@ -59,6 +64,7 @@ PAYLOAD_PARAMS = {
 def post_cat(cat):
     payload = PAYLOAD_PARAMS.copy()
     payload['text'] = '<%s>' % cat
+    payload['icon_emoji'] = random.choice(CAT_EMOJIS)
     return requests.post(INCOMING_WEBHOOK_URL, data={
         'payload': json.dumps(payload)
     })
